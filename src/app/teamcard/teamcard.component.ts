@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class TeamcardComponent implements OnInit {
-
+  btnClicks: boolean = true;
   constructor() { }
 
   ngOnInit(): void {

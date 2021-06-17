@@ -1,6 +1,36 @@
-
 <div class="container">
   <h3>i lv angular</h3>
-  <button class="btn btn-primary">lovey bootstrap</button>
+<hr>
+welcome, <h2 [innerText]="userName1"></h2>
+<hr>
+my age is : {{age}}
+<br>
+{{anyMethod()}}
+<hr>
+<small>property bindings:</small>
+<button class="btn btn-danger" [disabled]="somevariable">Property bindings</button>
+
+<hr>
+<small>event binding</small>
+
+<button class="btn btn-warning" (click)="clickEventMethod($event)">event bindings</button>
+<hr>
+<small>Two-way binding:<br></small>
+
+<input type="text" class="form-control" [(ngModel)]="twoway"/>
+Entered value:{{twoway}}
+
+<p *ngIf="btnClick; else marker1" >button was clicked</p>
+<ng-template #marker1>
+<p>button was not clicked</p>
+</ng-template>
+<hr>
+<p *ngFor="let val of vals">{{val}}</p>
+<hr>
+<p [ngStyle]="{backgroundColor: 'green'}">{{twoway}}</p>
+<hr>
+  <button class="btn btn-primary">lovely bootstrap</button>
 </div>
+
+
 
