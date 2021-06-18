@@ -20,17 +20,29 @@ my age is : {{age}}
 <input type="text" class="form-control" [(ngModel)]="twoway"/>
 Entered value:{{twoway}}
 
+
+<h1 *ngIf="showIt">show it when ngif is true</h1>
+<h1 *ngIf="!showIt">show it when ngif is false</h1>
+
+
 <p *ngIf="btnClick; else marker1" >button was clicked</p>
+
 <ng-template #marker1>
 <p>button was not clicked</p>
 </ng-template>
+
 <hr>
 <p *ngFor="let val of vals">{{val}}</p>
 <hr>
-<p [ngStyle]="{backgroundColor: 'green'}">{{twoway}}</p>
+<p [ngStyle]="{'background-color': 'orange', color:'white'}">{{twoway}}</p>
 <hr>
-  <button class="btn btn-primary">lovely bootstrap</button>
+<small>ngClass</small><br>
+<h2 [ngClass]="{xyz: ngClassCondition === false}">Example of ngClass</h2>
+<hr>
+  <button class="btn btn-primary"
+  >lovely bootstrap</button>
 </div>
+
 
 
 
