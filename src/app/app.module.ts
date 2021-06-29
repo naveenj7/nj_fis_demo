@@ -7,6 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { ManualcompComponent } from './manualcomponent/manualcomp.component';
 import { SignupComponent } from './signup/signup.component';
 import { TeamcardComponent } from './teamcard/teamcard.component';
+import { LoggingService } from './logging.service';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,10 @@ import { TeamcardComponent } from './teamcard/teamcard.component';
     LoginComponent,
     SignupComponent,
     TeamcardComponent,
-    ManualcompComponent
+    ManualcompComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -25,4 +32,6 @@ import { TeamcardComponent } from './teamcard/teamcard.component';
   bootstrap: [AppComponent]
 })
 
+
 export class AppModule { }
+

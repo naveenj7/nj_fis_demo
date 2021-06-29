@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
+
 @Component({
     selector: 'fisdemo-manulacomp',
     templateUrl: './manualcomp.component.html',
-    styleUrls: ['./manualcomp.component.scss']
+    styleUrls: ['./manualcomp.component.scss'],
+
   })
 
 export class ManualcompComponent {
@@ -17,7 +19,6 @@ export class ManualcompComponent {
   ngClassCondition: boolean = false;
 
   showIt:boolean = false;
-
 
   somevariable:boolean = true;
 
