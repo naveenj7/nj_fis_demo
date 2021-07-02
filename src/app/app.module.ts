@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthGaurdService } from './auth-gaurd.service';
+import { CanDeactivateGuard } from './contact/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AuthGaurdService } from './auth-gaurd.service';
     FormsModule
   ],
   providers: [
-    AuthGaurdService
+    AuthGaurdService,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })
