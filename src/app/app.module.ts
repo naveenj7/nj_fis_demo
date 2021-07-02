@@ -11,6 +11,7 @@ import { LoggingService } from './logging.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthGaurdService } from './auth-gaurd.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGaurdService
+  ],
   bootstrap: [AppComponent]
 })
 
