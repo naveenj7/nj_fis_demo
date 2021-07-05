@@ -1,7 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CanComponentDeactivate } from './can-deactivate-guard.service';
+import { UrlConstants } from '../common/constants';
 
 @Component({
   selector: 'contact',
@@ -10,12 +12,16 @@ import { CanComponentDeactivate } from './can-deactivate-guard.service';
 })
 export class ContactComponent implements OnInit, CanComponentDeactivate {
 
-  makeNavigateion= false;
+  makeNavigateion = false;
+  ambarish:any;
 
-  constructor(private route: Router) { }
-
+  constructor(
+    private route: Router,
+    private http: HttpClient
+    ) { }
 
   ngOnInit(): void {
+
   }
 
   goToSomeURL():any {
@@ -34,6 +40,16 @@ export class ContactComponent implements OnInit, CanComponentDeactivate {
       return false;
     }
 
+}
+
+
+getAllRecords(){
+  this.http
+  .get(UrlConstants.DUMMY_EMPLOYEE_URL + 'employees')
+  .subscribe((responseData) => {
+    this.ambarish = JSON.stringify(responseData);
+    console.log(responseData)
+  })
 }
 
 }

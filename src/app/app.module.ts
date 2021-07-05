@@ -7,12 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { ManualcompComponent } from './manualcomponent/manualcomp.component';
 import { SignupComponent } from './signup/signup.component';
 import { TeamcardComponent } from './teamcard/teamcard.component';
-import { LoggingService } from './logging.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthGaurdService } from './auth-gaurd.service';
 import { CanDeactivateGuard } from './contact/can-deactivate-guard.service';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -23,12 +23,14 @@ import { CanDeactivateGuard } from './contact/can-deactivate-guard.service';
     ManualcompComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     AuthGaurdService,
