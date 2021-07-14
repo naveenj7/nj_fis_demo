@@ -13,6 +13,10 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthGaurdService } from './auth-gaurd.service';
 import { CanDeactivateGuard } from './contact/can-deactivate-guard.service';
 import { HttpClientModule } from '@angular/common/http'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,13 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    BrowserAnimationsModule,
+    MatIconModule
+    
+    
   ],
   providers: [
     AuthGaurdService,

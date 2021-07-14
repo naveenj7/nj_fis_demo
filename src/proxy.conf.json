@@ -1,0 +1,19 @@
+{
+    "/students/all": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "logLevel": "debug"
+    },
+
+    "/teachers/all": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "logLevel": "debug"
+    },
+
+    "/courses/all": {
+        "target": "http://localhost:8081",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CanComponentDeactivate } from './can-deactivate-guard.service';
 import { UrlConstants } from '../common/constants';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'contact',
@@ -14,10 +15,12 @@ export class ContactComponent implements OnInit, CanComponentDeactivate {
 
   makeNavigateion = false;
   ambarish:any;
+  isDisabled:boolean=false;
 
   constructor(
     private route: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    public loadingController: LoadingController
     ) { }
 
   ngOnInit(): void {
@@ -44,14 +47,42 @@ export class ContactComponent implements OnInit, CanComponentDeactivate {
 
 
 getAllRecords(){
+  //this.isDisabled=true;
+  this.presentLoading();
   this.http
-  .get(UrlConstants.DUMMY_EMPLOYEE_URL + 'employees')
+  .get(UrlConstants.DUMMY_EMPLOYEE_URL + 'photos')
+  //.get('/students/all')
+  //.get(students/all'http://localhost:8081/')
   .subscribe((responseData) => {
     this.ambarish = JSON.stringify(responseData);
     console.log(responseData)
-  })
+    //this.isDisabled=false
+    //this.dismissLoader();
+    
+  },
+    (error) => {
+     // this.isDisabled = false;
+    // this.dismissLoader();
+  });
 }
 
+async presentLoading() {
+  console.log('Loading Component');
+  const loading = await this.loadingController.create({
+    cssClass: 'my-custom-class ion-loading',
+    message: 'Please wait...',
+    duration: 5000
+  });
+  await loading.present();
 }
 
+// dismissLoader() {
+//   this.loadingController.dismiss().then((response:any) => {
+//     console.log('Loader closed!', response);
+//   }).catch((err:any) => {
+//     console.log('Error occured : ', err);
+//   });
+// }
+
+}
 

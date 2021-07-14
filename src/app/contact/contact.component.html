@@ -1,5 +1,35 @@
 <h3>Contact Form</h3>
-<button class="btn btn-danger" (click)="getAllRecords()">fetch records</button>
+
+<!-- <button mat-raised-button [disabled]="isDisabled" (click)="getAllRecords()">fetch records
+  <mat-icon><mat-spinner diameter="20">
+  </mat-spinner></mat-icon>
+</button> -->
+  <!-- <mat-progress-spinner *ngIf="isDisabled" mode="indeterminate"></mat-progress-spinner> 
+
+<div>
+<button class="btn btn-danger" [disabled]="isDisabled" (click)="getAllRecords()">fetch records
+  <mat-icon *ngIf="isDisabled" ><mat-spinner diameter="20">
+  </mat-spinner></mat-icon>
+</button>
+  <mat-progress-bar
+      *ngIf="isDisabled"
+      mode="indeterminate"
+      color="warn"
+      
+  >
+  </mat-progress-bar> 
+</div>
+
+
+<ng-template #loading>
+  <div>
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+  </div>
+</ng-template> -->
+<button ion-button expand="block" (click)="presentLoading()">Show Loading</button>
+<button class="btn btn-danger" expand="block" (click)="presentLoading()">fetch records
+</button>
+
 <div class="container">
   <form >
     <label for="fname">First Name</label>
