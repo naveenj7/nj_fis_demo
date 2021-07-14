@@ -74,6 +74,7 @@ async presentLoading() {
     duration: 5000
   });
   await loading.present();
+  console.log("new changes");
 }
 
 // dismissLoader() {
